@@ -1,0 +1,37 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#avatar {
+    width: 20%;
+}
+
+
+#info {
+    text-align: center;
+}
+#info h1, #info p {
+    text-align: left;
+}
+#info h1 {
+    font-size: 28px;
+}
+.sect {
+    background-color: #E9E9E9;
+    width: 100%;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+footer {
+    background-color: #E9E9E9;
+    width: 100%;
+    margin: 10px;
+}
