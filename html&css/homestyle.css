@@ -1,0 +1,67 @@
+body {
+  background-color: #f4f4f4;
+  margin: 0;
+}
+header {
+  text-align: justify;
+}
+header h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  background-color: red;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 0;
+  padding: 15px;
+}
+#description {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 15px;
+  font-size: 20px;
+}
+.games {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.gioco {
+  margin: 10px;
+  border: solid rgb(164, 132, 132) 6px;
+  border-radius: 5px;
+  background-color: red;
+  text-align: center;
+  width: 200px;
+}
+.gioco h3 {
+  margin: 10px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: white;
+}
+#stats {
+  border-collapse: collapse;
+}
+#stats * {
+  padding: 5px;
+  border: solid black;
+}
+#signIn {
+  width: 120px;
+  height: 50px;
+  border-radius: 5px;
+  border: solid rgb(164, 132, 132) 3px;
+  background-color: red;
+}
+#signIn a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: white;
+  font-size: 24px;
+}
+#signIn:hover {
+  background-color: rgb(179, 122, 122);
+}
+@media screen and (max-width:400px) {
+  .games {
+    flex-direction: column;
+  }
+}

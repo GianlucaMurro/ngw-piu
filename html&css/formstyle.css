@@ -1,0 +1,37 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+}
+header {
+    background-color: #E60012;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+header * {
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+#logo {
+    width: 20%;
+}
+form {
+    border-radius: 5px;
+    border: solid lightgray 3px;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+}
+form * {
+    margin: 5px;
+}
+footer {
+    background-color: #DFDFDF;
+    margin: 5px;
+}
+#help {
+    text-align: right;
+}
