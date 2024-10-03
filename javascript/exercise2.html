@@ -6,7 +6,8 @@
   <script>
     let value;
     while (String(value).toUpperCase() != "EXIT") {
-      value = prompt("Insert whatever you want, type 'exit' if you want to stop");
+      value = prompt("Insert a numerical value, type 'exit' if you want to stop");
+      value = isNumerical(value);
     }
   </script>
 </html>
