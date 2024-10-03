@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <heaad> </heaad>
+  <body></body>
+  <script src="exerciseUtility.js"></script>
+  <script>
+    let shoppingList = [`apple`, `pear`, `banana`, `coffee`];
+    let keepGoing = true;
+
+    while (keepGoing) {
+      operation = prompt(`Select one of two options:
+      Type 1 to add a product to the end of your shopping list
+      Type 2 to remove the product at the end of your shopping list
+      Type 3 to remove a product of your choice`);
+
+      switch (operation) {
+        case `1`:
+          addProductTo(shoppingList);
+          break;
+        case `2`:
+          shoppingList.pop();
+          console.log(shoppingList);
+          if (shoppingList.length == 0) alert(`Your shopping list is now empty`)
+          break;
+        case `3`:
+          removeProductFrom(shoppingList);
+          break;
+        default:
+          alert(`None of the options given was chosen`);
+          break;
+      }
+
+      keepGoing = check();
+    }
+  </script>
+</html>
