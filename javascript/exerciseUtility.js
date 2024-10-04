@@ -1,5 +1,5 @@
 //Exercise 1
-function control(a) {
+function controlInteger(a) {
   while (a != parseInt(a)) {
     if (a == parseFloat(a)) {
       a = prompt(`The value given was not an integer, retry`);
@@ -7,7 +7,7 @@ function control(a) {
       a = prompt(`The value given was not a number, retry`);
     }
   }
-  return a;
+  return Number(a);
 }
 function display(text, times) {
   for (let i = 0; i < times; i++) {
@@ -57,5 +57,30 @@ function check() {
     default:
       alert(`I'll take that as a no`);
       return false;
+  }
+}
+
+//Exercise 4
+function addElementTo(shoppingDict) {
+  let element = prompt(`Insert the name of the element you want to add to your shopping list`).toLowerCase();
+  let quantity = prompt(`Insert how many you want to add`);
+    quantity = controlInteger(quantity);
+  if (element in shoppingDict) {
+    shoppingDict[element] += quantity;
+  } else {
+    shoppingDict[element] = quantity;
+  }
+  alert(`${quantity} ${element} were successfully added to your shopping list`);
+}
+function removeElementFrom(shoppingDict) {
+  let element = prompt(`Insert the name of the element you want to remove from your shopping list`).toLowerCase();
+  if (element in shoppingDict) {
+    let quantity = prompt(`Insert how many you want to remove`);
+    quantity = controlInteger(quantity);
+    shoppingDict[element] -= quantity;
+    if (shoppingDict[element] < 0) delete shoppingDict[element];
+    alert(`${quantity} ${element} were successfully removed from your shopping list`);
+  } else {
+    alert(`${element} is not in your shopping list`);
   }
 }

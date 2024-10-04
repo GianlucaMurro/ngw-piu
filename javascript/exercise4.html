@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <heaad> </heaad>
+  <body>  </body>
+  <!--This code allows the user to choose between adding, removing or viewing elements
+  of a shopping list, but it also allows the user to choose how many elements should be
+  added or removed-->
+  <script src="exerciseUtility.js"></script>
+  <script>
+    const shoppingDict = {};
+    let keepGoing = true;
+    while (keepGoing) {
+      operation = prompt(`Select one of three operations:
+      Type 1 to add an element to your shopping list
+      Type 2 to remove an element of your choice
+      Type 3 to view your shopping list`);
+
+      switch (operation) {
+        case `1`:
+          addElementTo(shoppingDict);
+          break;
+        case `2`:
+          removeElementFrom(shoppingDict);
+          break;
+        case `3`:
+          console.log(shoppingDict);
+          alert("Your shopping list was displayed on the console");
+          break;
+        default:
+          alert("None of the options given was chosen");
+          break;
+      }
+
+      keepGoing = check();
+    }
+  </script>
+</html>
