@@ -4,18 +4,20 @@
   <body>
     <main>
       <h1>Form</h1>
-      <form>
+      <form id="form">
         <h2>Username</h2>
-        <input id="name" type="text" placeholder="name" />
-        <input id="surname" type="text" placeholder="surname" />
-        <input id="email" type="email" placeholder="email" />
-        <input id="pwd" type="password" placeholder="pwd" />
+        <input id="name" type="text" placeholder="name" /> <br />
+        <input id="surname" type="text" placeholder="surname" /> <br />
+        <input id="email" type="email" placeholder="email" /> <br />
+        <input id="pwd" type="password" placeholder="pwd" /> <br />
         <button id="submit-button" type="submit">Login</button>
       </form>
       <div>
-        <ul id="data"></ul>
+        <h1 hidden id="welcome">Welcome!</h1>
+        <ul id="dataList"></ul>
       </div>
     </main>
+    <script src="exerciseUtility.js"></script>
     <script>
       //Practice for: async, await, fetch
       /*async function request() {
@@ -26,28 +28,19 @@
         console.log(reqJson);
       }*/
 
+      let form = document.getElementById("form");
       let button = document.getElementById(`submit-button`);
+
       button.addEventListener(`click`, function () {
         event.preventDefault();
-        let name = document.createElement(`li`);
-        let surname = document.createElement(`li`);
-        let email = document.createElement(`li`);
-        let pwd = document.createElement(`li`);
+        dataList = document.getElementById(`dataList`);
+        dataList.innerHTML = "";
 
-        name.innerHTML = `Name: ${document.getElementById(`name`).value}`;
-        surname.innerHTML = `Surname: ${document.getElementById(`surname`).value}`;
-        email.innerHTML = `Email: ${document.getElementById(`email`).value}`;
-        pwd.innerHTML = `Password: ${document.getElementById(`pwd`).value}`;
-
-        if (true) {
-            list = document.getElementById(`data`);
-            list.innerHTML = "<h1>Benvenuto!</h1>";
-            list.appendChild(name);
-            list.appendChild(surname);
-            list.appendChild(email);
-            list.appendChild(pwd);
-        } else {
-            //work in progress
+        for (let i = 0; i < form.length; i++) {
+          if (form[i].tagName == "INPUT") {
+            data = form[i].id;
+            if (!display(data, dataList)) break;
+          }
         }
       });
     </script>
