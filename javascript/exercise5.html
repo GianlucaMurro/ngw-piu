@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <main>
+      <h1>Form</h1>
+      <form>
+        <h2>Username</h2>
+        <input id="name" type="text" placeholder="name" />
+        <input id="surname" type="text" placeholder="surname" />
+        <input id="email" type="email" placeholder="email" />
+        <input id="pwd" type="password" placeholder="pwd" />
+        <button id="submit-button" type="submit">Login</button>
+      </form>
+      <div>
+        <ul id="data"></ul>
+      </div>
+    </main>
+    <script>
+      //Practice for: async, await, fetch
+      /*async function request() {
+        let req = await fetch(
+          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
+        );
+        let reqJson = await req.json();
+        console.log(reqJson);
+      }*/
+
+      let button = document.getElementById(`submit-button`);
+      button.addEventListener(`click`, function () {
+        event.preventDefault();
+        let name = document.createElement(`li`);
+        let surname = document.createElement(`li`);
+        let email = document.createElement(`li`);
+        let pwd = document.createElement(`li`);
+
+        name.innerHTML = `Name: ${document.getElementById(`name`).value}`;
+        surname.innerHTML = `Surname: ${document.getElementById(`surname`).value}`;
+        email.innerHTML = `Email: ${document.getElementById(`email`).value}`;
+        pwd.innerHTML = `Password: ${document.getElementById(`pwd`).value}`;
+
+        if (true) {
+            list = document.getElementById(`data`);
+            list.innerHTML = "<h1>Benvenuto!</h1>";
+            list.appendChild(name);
+            list.appendChild(surname);
+            list.appendChild(email);
+            list.appendChild(pwd);
+        } else {
+            //work in progress
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -50,9 +50,9 @@ function removeProductFrom(shoppingList) {
 }
 function check() {
   switch (String(prompt(`Do you want to keep going?`)).toUpperCase()) {
-    case "YES":
+    case `YES`:
       return true;
-    case "NO":
+    case `NO`:
       return false;
     default:
       alert(`I'll take that as a no`);
@@ -64,7 +64,7 @@ function check() {
 function addElementTo(shoppingDict) {
   let element = prompt(`Insert the name of the element you want to add to your shopping list`).toLowerCase();
   let quantity = prompt(`Insert how many you want to add`);
-    quantity = controlInteger(quantity);
+  quantity = controlInteger(quantity);
   if (element in shoppingDict) {
     shoppingDict[element] += quantity;
   } else {

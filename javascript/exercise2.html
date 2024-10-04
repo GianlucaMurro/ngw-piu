@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <heaad> </heaad>
+  <heaad></heaad>
   <body></body>
   <!--This code repeatedly asks the user to insert a numerical value until said user
   types EXIT-->
@@ -8,7 +8,9 @@
   <script>
     let value;
     while (String(value).toUpperCase() != `EXIT`) {
-      value = prompt(`Insert a numerical value, type 'exit' if you want to stop`);
+      value = prompt(
+        `Insert a numerical value, type 'exit' if you want to stop`
+      );
       value = isNumerical(value);
     }
   </script>
