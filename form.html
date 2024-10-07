@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <main>
+      <h1>Form</h1>
+      <form id="form">
+        <h2>Username</h2>
+        <input id="name" type="text" placeholder="name" /> <br />
+        <input id="surname" type="text" placeholder="surname" /> <br />
+        <input id="email" type="email" placeholder="email" /> <br />
+        <input id="pwd" type="password" placeholder="pwd" /> <br />
+        <button id="submit-button" type="submit">Login</button>
+      </form>
+    </main>
+    <script src="exerciseUtility.js"></script>
+    <script>
+      submit = document.getElementById("submit-button");
+      submit.addEventListener("click", function () {
+        window.location.href = "login.html";
+      });
+    </script>
+  </body>
+</html>
