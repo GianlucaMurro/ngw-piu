@@ -9,7 +9,7 @@ function controlInteger(a) {
   }
   return Number(a);
 }
-function display(text, times) {
+function send(text, times) {
   for (let i = 0; i < times; i++) {
     console.log(text);
   }
@@ -26,7 +26,9 @@ function isNumerical(a) {
 
 //Exercise 3
 function addProductTo(shoppingList) {
-  let product = prompt(`Insert a product you want to add to your shopping list`).toLowerCase();
+  let product = prompt(
+    `Insert a product you want to add to your shopping list`
+  ).toLowerCase();
   if (shoppingList.includes(product)) {
     console.log(shoppingList);
     alert(`${product} is already in your shopping list`);
@@ -37,7 +39,9 @@ function addProductTo(shoppingList) {
   }
 }
 function removeProductFrom(shoppingList) {
-  let product = prompt(`Insert a product you want to remove from your shopping list`).toLowerCase();
+  let product = prompt(
+    `Insert a product you want to remove from your shopping list`
+  ).toLowerCase();
   if (shoppingList.includes(product)) {
     i = shoppingList.indexOf(product);
     shoppingList.splice(i, 1);
@@ -62,7 +66,9 @@ function check() {
 
 //Exercise 4
 function addElementTo(shoppingDict) {
-  let element = prompt(`Insert the name of the element you want to add to your shopping list`).toLowerCase();
+  let element = prompt(
+    `Insert the name of the element you want to add to your shopping list`
+  ).toLowerCase();
   let quantity = prompt(`Insert how many you want to add`);
   quantity = controlInteger(quantity);
   if (element in shoppingDict) {
@@ -73,25 +79,31 @@ function addElementTo(shoppingDict) {
   alert(`${quantity} ${element} were successfully added to your shopping list`);
 }
 function removeElementFrom(shoppingDict) {
-  let element = prompt(`Insert the name of the element you want to remove from your shopping list`).toLowerCase();
+  let element = prompt(
+    `Insert the name of the element you want to remove from your shopping list`
+  ).toLowerCase();
   if (element in shoppingDict) {
     let quantity = prompt(`Insert how many you want to remove`);
     quantity = controlInteger(quantity);
     shoppingDict[element] -= quantity;
     if (shoppingDict[element] < 0) delete shoppingDict[element];
-    alert(`${quantity} ${element} were successfully removed from your shopping list`);
+    alert(
+      `${quantity} ${element} were successfully removed from your shopping list`
+    );
   } else {
     alert(`${element} is not in your shopping list`);
   }
 }
 
 // Exercise 5
-function display(data, dataList) {
+function send(data, dataList) {
   value = document.getElementById(data).value;
   if (value == "" || value.replaceAll(" ", "") == "") {
     dataList.innerHTML = "";
     document.getElementById("welcome").hidden = true;
-    alert("At least one of the fields was left empty, fill all of them to submit");
+    alert(
+      "At least one of the fields was left empty, fill all of them to submit"
+    );
     return false;
   } else {
     let info = document.createElement(`li`);
@@ -100,4 +112,46 @@ function display(data, dataList) {
     document.getElementById("welcome").hidden = false;
     return true;
   }
+}
+
+//Exercise 6
+async function getMealFrom(mealName) {
+  let req = await fetch(
+    `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
+  );
+  let meals = await req.json();
+  return meals.meals;
+}
+async function display(meals) {
+  meals = await meals;
+  main = document.getElementById("main");
+  for (let i=0; i<meals.length; i++) {
+    let dish = document.createElement("h1");
+    let img = document.createElement("img");
+    let instructions = document.createElement("p");
+
+    dish.innerHTML = `${meals[i].strMeal} [${meals[i].strArea}]`;
+    img.src = meals[i].strMealThumb;
+    img.width = 300;
+    img.height = 200;
+    instructions.innerHTML = meals[i].strInstructions;
+
+    main.appendChild(dish);
+    main.appendChild(img);
+    main.appendChild(instructions);
+  }
+}
+
+//Exercise 7
+async function getCondition(city) {
+  req = await fetch(
+    `http://api.weatherapi.com/v1/current.json?key=NOKEY&q=${city}&aqi=no`
+  );
+  reqJson = await req.json();
+  return reqJson.current.condition;
+}
+async function showCondition(condition, res) {
+  condition = await condition;
+  res.innerHTML += `<h4>${condition.text}</h4>`;
+  res.innerHTML += `<img src=${condition.icon}>`;
 }

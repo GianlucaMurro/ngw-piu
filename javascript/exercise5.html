@@ -19,15 +19,6 @@
     </main>
     <script src="exerciseUtility.js"></script>
     <script>
-      //Practice for: async, await, fetch
-      /*async function request() {
-        let req = await fetch(
-          `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`
-        );
-        let reqJson = await req.json();
-        console.log(reqJson);
-      }*/
-
       let form = document.getElementById("form");
       let button = document.getElementById(`submit-button`);
 
@@ -39,7 +30,7 @@
         for (let i = 0; i < form.length; i++) {
           if (form[i].tagName == "INPUT") {
             data = form[i].id;
-            if (!display(data, dataList)) break;
+            if (!send(data, dataList)) break;
           }
         }
       });

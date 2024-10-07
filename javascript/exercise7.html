@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <main>
+      <form>
+        <input id="city" type="text" placeholder="City name" />
+        <button id="climaticCondition" type="submit">
+          Get climatic condition
+        </button>
+        <div id="result"></div>
+      </form>
+    </main>
+  </body>
+  <script src="exerciseUtility.js"></script>
+  <script>
+    let button = document.getElementById(`climaticCondition`);
+    button.addEventListener(`click`, function () {
+      event.preventDefault();
+      let city = document.getElementById(`city`).value;
+      if (city == `` || city.replaceAll(` `, ``) == ``) {
+        alert(`No city was selected`);
+      } else {
+        res = document.getElementById(`result`);
+        res.innerHTML = `<h1>${city}<h1>`;
+        showCondition(getCondition(city), res);
+      }
+    });
+  </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <main>
+      <h1>Insert your information</h1>
+      <form id="form">
+        <input type="text" placeholder="Username" id="username" /> <br />
+        <input type="email" placeholder="Email" id="email" /> <br />
+        <input type="password" placeholder="Password" id="pwd" /> <br />
+        <button type="submit" id="login">Login</button>
+      </form>
+    </main>
+    <script src="exerciseUtility.js"></script>
+    <script>
+      let login = document.getElementById("login");
+      let user = {};
+      login.addEventListener("click", function () {
+        event.preventDefault();
+        let form = document.getElementById("form");
+        let okay = true;
+        for (let i=0; i<form.length; i++) {
+          if (form[i].tagName == "INPUT") {
+            data = form[i].id;
+            value = form[i].value;
+            user[data] = value;
+            if (value == "" || value.replaceAll(" ", "") == "") {
+              alert("All fields must be filled");
+              okay = false;
+              break;
+            }
+          }
+        }
+        if (okay) window.location.href = "exercise6meal.html";
+      });
+    </script>
+  </body>
+</html>
