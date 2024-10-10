@@ -1,0 +1,36 @@
+.container {
+  background-color: #d3d3d3;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 400px;
+}
+.options {
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.options div {
+  background-color: #808080;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+.clash {
+  margin-top: 20px;
+}
+.popup {
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+.you,
+.opponent {
+  align-items: center;
+  background-color: #808080;
+  padding: 15px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
